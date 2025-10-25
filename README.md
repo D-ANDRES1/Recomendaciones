@@ -16,6 +16,13 @@ La aplicación permite a los usuarios:
 - Añadir productos a un carrito de compras y ver el total.
 - Cambiar sus preferencias de categorías o salir de la sesión desde la pantalla de configuración.
 - Probar el sistema de notificaciones locales.
+- La funcionalidad principal ha sido actualizada para permitir a los usuarios:
+- Interactuar directamente con un asistente de IA a través de una interfaz de chat.
+- Escribir peticiones de recomendaciones en lenguaje natural (ej: "recomiéndame una película de acción").
+- Recibir respuestas generadas por la IA.
+  ​
+  *Nota: Las funcionalidades anteriores como el inicio de sesión, la selección de categorías, la lista de productos, el carrito de compras y los favoritos han sido reemplazadas por esta nueva interfaz de chat.*
+
 
 ## Requisitos Técnicos
 
@@ -26,6 +33,15 @@ La aplicación permite a los usuarios:
 - **UI**: AndroidX, Material Components, RecyclerView, ConstraintLayout.
 - **Imágenes**: Glide para la carga y caché de imágenes.
 - **Compilación**: Gradle con Kotlin DSL y Version Catalog.
+- **Notificaciones**: Notificaciones locales de Android.
+- **APIs Externas**:
+- dummyjson para productos de prueba.
+- webhook n8n para manejo de IA.
+- Firebase Authentication para inicio de sesión con Google.
+- groq api para consultas de IA.
+- FOURSQUARE PLACES API para recomendaciones de lugares.
+- OSMDROID para mapas y geolocalización.
+
 
 ## Cómo Compilar y Ejecutar
 
@@ -35,15 +51,26 @@ La aplicación permite a los usuarios:
 4.  Ejecuta la aplicación en un emulador o en un dispositivo físico.
 
 ## Dependencias y APIs
+- Retrofit para llamadas HTTP.
+- Gson para parsing JSON.
+- Glide para carga de imágenes.
+- SQLite para almacenamiento local.
+- Material Components para UI.
+- Notificaciones locales de Android.
+- dummyjson para productos de prueba.
+- webhook n8n para manejo de IA.
+- Firebase Authentication para inicio de sesión con Google.
+- groq api para consultas de IA.
+- FOURSQUARE PLACES API para recomendaciones de lugares.
+- OSMDROID para mapas y geolocalización.
 
-- **FakeStoreAPI**: La aplicación obtiene los datos de los productos de `https://fakestoreapi.com`. No se requiere una clave de API para su uso.
-- **Google Places / Yelp**: La especificación mencionaba estas APIs como opcionales para la búsqueda por ubicación. Esta funcionalidad no se implementó, pero la base está preparada para futuras expansiones.
 
 ## Cómo Probar la Aplicación (Flujo de Prueba)
 
 1.  **Inicio y Onboarding**:
     - Inicia la app. Serás recibido por la pantalla de Login.
     - Pulsa "Continuar como invitado".
+    - o google Sign-In firebase
     - En la pantalla de Onboarding, selecciona algunas categorías de tu interés (ej. "electronics", "jewelery") y pulsa "Guardar y continuar".
 
 2.  **Pantalla Principal (Home)**:
@@ -60,8 +87,7 @@ La aplicación permite a los usuarios:
     - Vuelve a la pantalla principal y navega a la pestaña "Favoritos" usando la barra inferior. El producto que marcaste como "Me gusta" debería aparecer aquí.
     - En la barra superior de la app, pulsa el icono del carrito. Serás llevado a `CarritoActivity`, donde verás el producto que añadiste y el total.
 
-5.  **Búsqueda y Configuración**:
-    - Ve a la pestaña "Buscar". Escribe un término (ej. "ring") y pulsa buscar. Verás los resultados coincidentes.
+5.  **Configuración**:
     - Ve a la pestaña "Configuración".
     - Pulsa "Probar Notificación" para recibir una notificación de ejemplo.
     - Pulsa "Salir" para borrar tus preferencias y volver a la pantalla de Login.
