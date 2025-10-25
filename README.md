@@ -2,6 +2,9 @@
 
 Esta es una aplicación de Android para recomendaciones de productos y servicios, desarrollada en Java siguiendo las especificaciones proporcionadas.
 
+url de documentacion extensa de mi trayecto lo que hice en mi app: 
+https://docs.google.com/document/d/1zZ-6stoWtuezg4N8a7BLnECt6WbHZHN8bEn7KLrZOCU/edit?usp=sharing
+
 ## Resumen Funcional
 
 La aplicación permite a los usuarios:
