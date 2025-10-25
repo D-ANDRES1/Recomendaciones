@@ -1,0 +1,42 @@
+# Folders and files created by Android Studio
+*.iml
+.gradle/
+/local.properties
+.idea/
+/build/
+/captures/
+.cxx/
+
+# APK, AAB and other build outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Java and Kotlin class files
+*.class
+
+# Log files
+*.log
+
+# Keystore files (MUY IMPORTANTE ignorar)
+*.jks
+*.keystore
+
+# Google Services file (puede contener información sensible)
+google-services.json
+
+# Archivos específicos de Mac
+.DS_Store
+
+# Archivos de variables de entorno
+.env
+*.env
+
+# Archivos comunes de secretos
+secrets.properties
+credentials.json
+keys.xml
+
+# Metadatos de otros editores
+.vscode/
